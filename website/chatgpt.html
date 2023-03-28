@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Daily Worker Wagers</title>
+	<style>
+		body {
+			background-image: url(44.jpeg);
+			background-position: fill;
+			background-size: cover;
+			background-repeat: no-repeat;
+		}
+
+		.logo {
+			display: inline-block;
+			width: 80px;
+			height: 80px;
+			border-radius: 60%;
+			background-color: #ffffff;
+			background-image: url(7.jpg);
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center;
+			margin: 20px 0 0 20px;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+
+		.menu {
+			display: inline-block;
+			margin: 40px 0 0 20px;
+			padding: 0;
+			list-style-type: none;
+		}
+
+		.menu li {
+			display: inline-block;
+			margin-right: 20px;
+		}
+
+		.menu li a {
+			color: #ffffff;
+			text-decoration: none;
+			font-weight: bold;
+			font-size: 18px;
+			padding: 10px;
+			border-radius: 4px;
+		}
+
+		.menu li a:hover {
+			background-color: rgba(255, 255, 255, 0.2);
+		}
+
+		h1 {
+			margin-top: 80px;
+			margin-left: 20px;
+			font-size: 42px;
+			color: #ff4500;
+		}
+
+		h2 {
+			margin-top: 40px;
+			margin-left: 20px;
+			font-size: 30px;
+			color: skyblue;
+		}
+		
+		p {
+			margin-top: 20px;
+			margin-left: 20px;
+			font-size: 18px;
+			color: white;
+		}
+
+		.slideshow-container {
+			max-width: 15cm;
+			height: 10cm;
+			position: relative;
+			margin: 20px;
+		}
+
+		.mySlides {
+			display: none;
+			max-width: 15cm;
+			height: 10cm;
+			object-fit: contain;
+			object-position: center;
+		}
+
+		.prev, .next {
+			cursor: pointer;
+			position: absolute;
+			top: 50%;
+			width: auto;
+			padding: 16px;
+			margin-top: -22px;
+			color: white;
+			font-weight: bold;
+			font-size: 18px;
+			transition: 0.6s ease;
+			border-radius: 0 3px 3px 0;
+			user-select: none;
+		}
+
+		.next {
+			right: 0;
+			border-radius: 3px 0 0 3px;
+		}
+
+		.prev:hover, .next:hover {
+			background-color: rgba(0,0,0,0.8);
+		}
+
+		.numbers {
+			display: flex;
+			justify-content: center;
+			margin-top: 10px;
+		}
+
+		.dot {
+			cursor: pointer;
+			height: 15px;
+			width: 15px;
+			margin: 0 5px;
+			background-color: #bbb;
+			border-radius: 50%;
+			display: inline-block;
+			transition: background-color 0.6s ease;
+		}
+
+		.active, .dot:hover {
+			background-color: #717171;
+		
+
+</style>
+</head>
+<body>
+	<div class="logo"></div>
+	<ul class="menu">
+		<li><a href="#">Home</a></li>
+		<li><a href="#">About</a></li>
+		<li><a href="#">Services</a></li>
+		<li><a href="#">Contact Us</a></li>
+	</ul>
+	<h1>Daily Work Wagers</h1>
+	<h2>Providing quality labor for your projects</h2>
+	<p>With over 20 years of experience in the industry, Daily Worker Wagers provides the highest quality labor for all your construction, renovation, and maintenance projects. Our team consists of highly skilled and trained professionals who are committed to providing you with the best possible service.</p>
+	<div class="slideshow-container">
+		<div class="mySlides fade">
+			<img src="44.jpeg" alt="Construction worker holding a hammer">
+		</div>
+		<div class="mySlides fade">
+			<img src="7.jpg" alt="Construction workers pouring concrete">
+		</div>
+		<div class="mySlides fade">
+			<img src="3.jpg" alt="Construction workers using a crane">
+		</div>
+		<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+		<a class="next" onclick="plusSlides(1)">&#10095;</a>
+	</div>
+	<br>
+	<div class="numbers">
+		<span class="dot" onclick="currentSlide(1)"></span>
+		<span class="dot" onclick="currentSlide(2)"></span>
+		<span class="dot" onclick="currentSlide(3)"></span>
+	</div>
+	<script>
+		var slideIndex = 1;
+		showSlides(slideIndex);
+scss
+Copy code
+	function plusSlides(n) {
+		showSlides(slideIndex += n);
+	}
+
+	function currentSlide(n) {
+		showSlides(slideIndex = n);
+	}
+
+	function showSlides(n) {
+		var i;
+		var slides = document.getElementsByClassName("mySlides");
+		var dots = document.getElementsByClassName("dot");
+		if (n > slides.length) {
+			slideIndex = 1
+		}
+		if (n < 1) {
+			slideIndex = slides.length
+		}
+		for (i = 0; i < slides.length; i++) {
+			slides[i].style.display = "none";
+		}
+		for (i = 0; i < dots.length; i++) {
+			dots[i].className = dots[i].className.replace(" active", "");
+		}
+		slides[slideIndex - 1].style.display = "block";
+		dots[slideIndex - 1].className += " active";
+		setTimeout(showSlides, 3000); // Change image every 3 seconds
+	}
+</script>
+</body>
+</html>

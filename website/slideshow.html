@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Slideshow</title>
+	<style>
+		body {
+			background-color: #333333;
+			font-family: Arial, sans-serif;
+			color: #ffffff;
+			margin: 0;
+			padding: 0;
+		}
+
+		.container {
+			max-width: 1000px;
+			margin: 0 auto;
+			padding: 20px;
+		}
+
+		.slideshow {
+			width: 20cm;
+			height: 10cm;
+			margin: 0 auto;
+			position: relative;
+			overflow: hidden;
+		}
+
+		.slideshow img {
+			width: 70%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			opacity: 0;
+			transition: opacity 1s ease-in-out;
+		}
+
+		.slideshow img:first-child {
+			opacity: 1;
+		}
+
+		.slideshow img.active {
+			opacity: 1;
+		}
+
+		.slideshow-controls {
+			margin-top: 10px;
+			text-align: center;
+		}
+
+		.slideshow-controls button {
+			background-color: #ffffff;
+			color: #333333;
+			border: none;
+			padding: 10px;
+			border-radius: 4px;
+			cursor: pointer;
+			margin-right: 5px;
+		}
+
+		.slideshow-controls button:hover {
+			background-color: #333333;
+			color: #ffffff;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>Slideshow</h1>
+		<div class="slideshow">
+			<img src="7.jpg" class="active" />
+			<img src="44.jpeg" />
+			<img src="3.jpg" />
+			<img src="7.jpg" />
+		</div>
+		
+
+	<script>
+		var slideIndex = 1;
+		showSlides(slideIndex);
+
+		function nextSlide() {
+			showSlides(slideIndex += 1);
+		}
+
+		function previousSlide() {
+			showSlides(slideIndex -= 1);
+		}
+
+		function showSlides(n) {
+			var i;
+			var slides = document.getElementsByClassName("slideshow")[0].getElementsByTagName("img");
+			if (n > slides.length) {
+				slideIndex = 1;
+			}
+			if (n < 1) {
+				slideIndex = slides.length;
+			}
+			for (i = 0; i < slides.length; i++) {
+				slides[i].classList.remove("active");
+			}
+			slides[slideIndex-1].classList.add("active");
+			setTimeout(nextSlide, 3000); // Change slide every second
+		}
+	</script>
+</body>
+</html>
